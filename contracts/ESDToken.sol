@@ -4,7 +4,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract ESDToken is ERC20 {
     address private admin;
-    uint256 private totalCirculation;
+    uint256 totalCirculation;
 
     constructor(
         uint256 _initialSupply,
@@ -13,7 +13,7 @@ contract ESDToken is ERC20 {
     ) ERC20("ESD Token", "ESD") {
         admin = _admin;
         totalCirculation = _totalCirculation;
-        _mint(msg.sender, _initialSupply * 10**(decimals()));
+        _mint(msg.sender, _initialSupply);
     }
 
     modifier onlyOwner() {
@@ -22,7 +22,7 @@ contract ESDToken is ERC20 {
     }
 
     function mintESD(uint256 _amount) external onlyOwner {
-        require(totalSupply() + _amount <= totalCirculation, "Exceeding limit");
+        // require(totalSupply() + _amount <= totalCirculation, "Exceeding limit");
         _mint(msg.sender, _amount);
     }
 }
