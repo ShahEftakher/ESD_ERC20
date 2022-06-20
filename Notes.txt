@@ -1,0 +1,13 @@
+1. Create contracts in ./contracts
+2. To configure network to run on custom ganache uncomment and update in truffle-config.js
+    - development: {
+       host: '127.0.0.1', // Localhost (default: none)
+       port: 8545, // Standard Ethereum port (default: none)
+       network_id: '*', // Any network (default: none)
+     },
+3. This network can be configured for testnet as well
+4. Token created using the ERC20 Standard from openzeppeline library
+5. Users can directly interact with the token contract using metamask 
+6. The public functions are accessible for the users to perform transaction
+7. To allow external contracts to use Token, there must be some external functions
+8. Use by external contract is not working. :(

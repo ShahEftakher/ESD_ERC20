@@ -1,0 +1,7 @@
+let coin = await ESDToken.deployed()
+
+Transfer:
+await coin.transferTo("0x5feC42F64911d4cADb50098E345dCC3B301252Bd", 2000, {from: "0xb3fD87139531294cfceF6DB32B1d471B4aC30149"})
+
+Balance:
+bal = await coin.balanceOf("0x5feC42F64911d4cADb50098E345dCC3B301252Bd")
